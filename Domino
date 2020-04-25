@@ -1,0 +1,81 @@
+import java.util.Random;
+import java.util.Scanner;
+
+class Gracz{
+	String Player1name;
+	String Player2name;
+	int[] Array1 = new int[31];
+	int[] Array2 = new int[31];
+	int i;
+	int j;
+}
+class Gracz1 extends Gracz{
+	Scanner scan=new Scanner(System.in);
+
+	public void nazwij(){
+	System.out.println("Podaj swoje imie/nazwe/pseudonim:");
+	Player1name = scan.nextLine();
+}
+}
+class Gracz2 extends Gracz{
+	Scanner scan1=new Scanner(System.in);
+
+	public void nazwij2(){
+	System.out.println("Podaj swoje imie/nazwe/pseudonim:");
+	Player2name = scan1.nextLine();
+}
+}
+class Losuj extends Gracz{
+	Random r= new Random();
+	
+	public void nadaj(){
+		for(i=0; i<12; i++){
+			Array1[i]=r.nextInt(6);
+			Array2[i]=r.nextInt(6);
+		}
+}
+}
+class Dobierz extends Gracz{
+	Random r= new Random();
+
+	public void draw();
+}
+
+public class Domino {
+public static void main(String args[]) {
+	
+	int x;
+	Scanner scan2=new Scanner(System.in);	
+	Gracz1 gra1 = new Gracz1();
+	gra1.nazwij();
+	Gracz2 gra2 = new Gracz2();
+	gra2.nazwij2();
+	Losuj los = new Losuj();
+	los.nadaj();
+System.out.println("1.Podaj nazwe pierwszego gracza");
+System.out.println("2.Podaj nazwe drugiego gracza");
+System.out.println("3.Podaj wylosowane kostki pierwszego gracza");
+System.out.println("4.Podaj wylosowane kostki drugiego gracza");
+	x=scan2.nextInt();
+	switch(x){
+case 1:
+	System.out.println("" + gra1.Player1name);
+	break;
+case 2:
+	System.out.println("" + gra2.Player2name);
+	break;
+case 3:
+	for(int i=0; i<6; i++)
+	{
+		System.out.println("|" + los.Array1[i] + "|" + los.Array2[i] + "|");
+	}
+	break;
+case 4:
+	for(int i=6; i<12; i++)
+	{
+		System.out.println("|" + los.Array1[i] + "|" + los.Array2[i] + "|");
+	}
+	break;
+}
+}
+}
