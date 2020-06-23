@@ -20,7 +20,7 @@ public class GUI extends JFrame{
         setContentPane(jpanel);
         pack();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(800, 600);
+        setSize(1280, 720);
         setVisible(true);
         Dobierz.addActionListener(e -> zagraj = "dobierz");
         revalidate();
